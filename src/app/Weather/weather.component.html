@@ -1,0 +1,75 @@
+
+<div class="row col-md-12">
+  <div class="form-group">
+    <div class="row col-md-12 form-control2">
+      <input type="text" id="city" name="city" ngModel #city required class="form-control border-color" style="border: 1px solid darkgrey;" placeholder="Enter your city name">&nbsp;&nbsp;
+      <button type="submit" class="btn btn-orange" style="border: 1px solid darkgrey;" (click)="onClick(city.value)"> Search</button>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="up">
+  <div class="weather-container" *ngFor="let weather of weatherForecastReport">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">{{ weather[0].dt | myDatepipe | date: 'EEE, MMM d, y' }}</h4>
+        <div class="card-text">
+          <ul>
+            <li *ngFor="let item of weather">
+              <div class="weather-info">
+                <p class="time">
+                  {{ item.dt | myDatepipe | date: 'hh:mm a' }}
+                </p>
+                <p class="temp">
+                  {{item.main.temp }}&deg;C &nbsp;
+                </p>
+                <p class="humidity">
+                  {{ item.main.humidity}}% &nbsp;
+                </p>
+                <p class="speed">
+                  {{ item.wind.speed}}m/s &nbsp;
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <div *ngIf="hide">
+    <div class="weather-container" *ngFor="let weather of weatherForecasthistory">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">{{ weather[0].dt | myDatepipe | date: 'EEE, MMM d, y'}} </h4>
+          <div class="card-text">
+            <ul>
+              <li *ngFor="let item of weather">
+                <div class="weather-info">
+                  <p class="time">
+                    {{ item.dt | myDatepipe | date: 'hh:mm a' }}
+                  </p>
+                  <p class="temp" style="margin-left: 10px">
+                    {{item.main.temp }}&deg;C &nbsp;
+                  </p>
+                  <p class="humidity" style="margin-left: 10px">
+                    {{ item.main.humidity}}% &nbsp;
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="show">{{ errorMessage }} - Please enter only German city names</div>
+  <div class="row col-md-12 foo" style="display:inline-flex">
+    <p>Your search history</p>
+    <ul>
+      <li *ngFor="let key of cities" style="display: inline;">
+        <button type="submit" class="myButton" (click)="Onchange(key)">{{key}}&nbsp;&nbsp;</button>
+      </li>
+    </ul>
+  </div>
+

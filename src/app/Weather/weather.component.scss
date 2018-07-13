@@ -1,0 +1,125 @@
+
+.weather-container {
+  width: 20%;
+  min-height: 80px;
+  float: left;
+
+
+  .card {
+    margin: 5px;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 2px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+
+    .card-body {
+      padding: 1.25rem;
+    }
+
+    .card-title {
+      font-size: larger;
+      font-family: monospace;
+      font-weight: 600;
+      color: crimson;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+
+      li {
+        list-style: none;
+
+        i {
+          float: left;
+          margin-right: 5px;
+        }
+      }
+    }
+
+    p {
+      display: inline-block;
+    }
+  }
+
+
+  .weather-info {
+    height: 40px;
+    font-size: larger;
+    font-family: serif;
+
+    p {
+      line-height: 40px;
+      font-size: 12px;
+    }
+
+    .speed {
+      font-family: serif;
+      color: rebeccapurple;
+    }
+
+    .temp {
+      font-family: serif;
+      color: rebeccapurple;
+    }
+
+    .humidity {
+      font-family: serif;
+      color: rebeccapurple;
+    }
+
+    .time {
+      margin-right: 5px;
+      font-family: serif;
+      color: rebeccapurple;
+    }
+  }
+}
+.form-control {
+  display: inline-block;
+  width: auto;
+  vertical-align: middle;
+  
+}
+.form-control2 {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 450px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  display: inline-block;
+  margin-bottom: 0;
+  vertical-align: middle; 
+}
+.foo {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  margin-left:5px;
+  display: inline-block;
+}
+.myButton {
+  background-color: lightslategrey;
+  -moz-border-radius: 27px;
+  -webkit-border-radius: 27px;
+  border-radius: 27px;
+  border: 1px solid #18ab29;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 15px;
+  font-style: italic;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #2f6627;
+  margin-left:5px;
+}
+
+.myButton:active {
+  position: relative;
+  top: 1px;
+}
+
